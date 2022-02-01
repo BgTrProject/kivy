@@ -1,0 +1,80 @@
+
+<Bing>:
+    BoxLayout
+        orientation: 'vertical'
+        padding: [10,50,10,50]
+        spacing: 50
+        size_hint: None, None
+        size: 500, 650
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 40
+        spacing: 25
+        orientation: 'vertical'
+        Label:
+            text: 'Bing'
+            font_size: 15
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Aranılacak Kelime'
+                font_size: 14
+                size_hint_x: None
+                pos_hint: {"center_x": 0.18}
+            TextInput:
+                id: search_keyword
+                multiline:False
+                font_size: 14
+                icon_left: "account-check"
+                hint_text: "Keyword"
+                foreground_color: 1, 0, 0
+                size_hint_x: None
+                width: 380
+                pos_hint: {"center_x": 0.5}
+
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Site Url'
+                font_size: 14
+                size_hint_x: None
+                pos_hint: {"center_x": 0.10}
+
+            TextInput:
+                id: site_url
+                multiline:False
+                font_size: 14
+                icon_left: "account-check"
+                hint_text: "SiteUrl"
+                foreground_color: 1, 0, 0
+                size_hint_x: None
+                width: 380
+                pos_hint: {"center_x": 0.5}
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Dosya Adı'
+                font_size: 14
+                size_hint_x: None
+                pos_hint: {"center_x": 0.12}
+
+            TextInput:
+                id: file_name
+                multiline:False
+                font_size: 14
+                icon_left: "account-check"
+                hint_text: "FileName"
+                foreground_color: 1, 0, 0
+                size_hint_x: None
+                width: 380
+                pos_hint: {"center_x": 0.5}
+        Button:
+            text: "Sorgula"
+            font_size: 15
+            pos_hint: {"center_x": 0.5}
+            on_press: root.BingSearch(search_keyword.text, site_url.text, file_name.text)
+        Button:
+            text: "Geri"
+            font_size: 15
+            pos_hint: {"center_x": 0.5}
+            on_press: root.disconnect()
