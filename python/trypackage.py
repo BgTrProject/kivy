@@ -5,8 +5,7 @@ import subprocess
 
 
 def controlpackage():
-    for package in ['kivy','kivymd', 'webdriver_manager','pandas','unidecode','bs4','fake_useragent','lxml','scrapy','dotmap','pymysql','psycopq2','hjson','cchardet', 'tweepy', 'dtale', 'templates', 'snscrape','credentials','pyplotlib<3.3.0','requests_html','dateparser','demjson3','selenium','chromedriver_binary','requests_oauthlib','dateparser','feedparser','environ']:
-        try:
+    for package in ['kivy','kivymd', 'webdriver_manager','pandas','unidecode','bs4','fake_useragent','lxml','scrapy','dotmap','pymysql','hjson','cchardet', 'tweepy', 'dtale', 'templates', 'snscrape','credentials','requests_html','dateparser','demjson3','selenium','chromedriver_binary','requests_oauthlib','dateparser','feedparser','environ','matplotlib','psycopg2','elasticsearch','html5lib']:        try:
             dist = pkg_resources.get_distribution(package)
             print('{} ({}) is installed'.format(dist.key, dist.version))
         except pkg_resources.DistributionNotFound:
