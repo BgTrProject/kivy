@@ -16,3 +16,26 @@ python python/trypackage.py
 
 # Start Project 
 python main.py
+
+
+
+iyi çalışmalar ....
+
+
+
+Arayüzdeki modullerin kullanımı için :
+
+
+Tweepy modülü:
+
+![](/kivy_pictures/s_teepy_q.png)
+
+Tweepy modulu kullanılarak arama gerçekleştirme:
+Tweepy modulunde arama gerçekleştirmek için öncelikle kullanıcının tweepy’e kendi şifreleriyle
+bağlanması gerekli bunun için (consumer key,consumer token, access token, access secret )
+parametrelerin olması gereklidir. Bu sayede apiye bağlanılır. Api sayesende tweet aramaları
+yapılabilinir.
+İlgili arama kelimesi (keyword) ve istenilen sonuçtan kaç adet talep edileceği (max result) ve hangi
+dilde arama yapılacağı girildikten sonra ilgili sonuçların hangi dosya adında kaydedileceği (file name)
+belirtip arama (search) butonuna tıklanır.
+
