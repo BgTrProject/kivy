@@ -3,7 +3,7 @@
 
 #firstly download chromedriver which is suitible with your google chrome version
 
-#then if your os is linux => copy the chromedriver to '/var/lib/'
+#then if your os is linux => copy the chromedriver to '/usr/bin/'
 
 #.....if your os is windows => copy the chromedriver to 'C://'
 
