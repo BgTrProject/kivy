@@ -12,7 +12,7 @@
 python -m venv venv
 
 # install modules which is required
-pip install kivy .....etc
+python python/trypackage.py
 
 # Start Project 
 python main.py
