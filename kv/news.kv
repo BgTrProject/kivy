@@ -1,0 +1,34 @@
+<News>:
+    FloatLayout:
+        orientation: 'vertical'
+        padding: [10,50,10,50]
+        size_hint: None, None
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        spacing: 15
+        orientation: 'vertical'
+
+        Button:
+            text: "News Date Search"
+            font_size: 20
+            background_color:0.208, 1, 0.973
+            pos_hint:{"center_x": 0.5, "top": 2}
+            size_hint:(3, .8)
+            on_press: root.news_date_search()
+        Button:
+            text: "News Search"
+            font_size: 20
+            background_color:0.208, 1, 0.973
+            pos_hint:{"center_x": 0.5, "top": 1}
+            size_hint:(3, .8)
+            on_press: root.news()
+
+        Button:
+            text: ""
+            background_normal:'image/geri3.png'
+            font_size: 18
+            pos_hint:{"center_x": -2.4, "top": -1.6}
+            size_hint:(0.6,0.6)
+            on_press: root.disconnect()
+
+

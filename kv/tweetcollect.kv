@@ -1,0 +1,184 @@
+
+<TweetCollect>:
+    FloatLayout:
+        orientation: 'vertical'
+        padding: [10,50,10,50]
+        size_hint: None, None
+        pos_hint: {"center_x": 0.5, "center_y": 0.5} #3-17 div mantığı
+        elevation: 10
+        spacing: 15
+
+        
+        Label:
+            text: '  Tweet Collect  '
+            color: 0.408, 0.741, 1 # <----------- 
+            font_size: 25
+            size_hint:(1, .03)
+            pos_hint:{"center_x": 0.5, "top": 4}
+ 
+
+        Button:
+            text: ""
+            background_normal:'image/gericollect.png'
+            font_size: 15
+            pos_hint:{"center_x": -3.2, "top": 4.2}
+            size_hint:(0.5,0.5)
+            on_press: root.disconnect()
+
+        
+        Label:
+            text: 'Tweet Count'
+            color: 0.408, 0.741, 1 # <----------- 
+            font_size: 20
+            size_hint:(0.9,0.001)
+            pos_hint:{"center_x": 0.5, "top": 3.6}#beyaz kutu üstü başlık konum
+            
+        TextInput:
+            id: tweet_count
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "Example: 100"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:4,0.3
+            pos_hint: {"center_x": 0.5, "top": 3.4} #beyaz kutu konumu
+
+        
+        Label:
+            text: 'Language'
+            font_size: 20
+            color: 0.408, 0.741, 1 
+            pos_hint: {"center_x": 0.5, "top": 3.45}
+
+        TextInput:
+            id: lang
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "Example: tr,en"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:4,0.3
+            pos_hint: {"center_x": 0.5, "top": 2.75}
+        
+        Label:
+            text: 'Since Date'
+            font_size: 20
+            color: 0.408, 0.741, 1 
+            pos_hint: {"center_x": 0.5, "top": 2.8}
+
+        TextInput:
+            id: since_date
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "Example: YYYY-MM-DD"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:4,0.3
+            pos_hint: {"center_x": 0.5, "top": 2.1}
+
+       
+        Label:
+            text: 'Until Date'
+            font_size: 20
+            color: 0.408, 0.741, 1 
+            pos_hint: {"center_x": 0.5, "top": 2.15}
+
+        TextInput:
+            id: until_date
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "Example: YYYY-MM-DD"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:4,0.3
+            pos_hint: {"center_x": 0.5, "top": 1.45}
+
+        
+        Label:
+            text: 'Text Query'
+            font_size: 20
+            color: 0.408, 0.741,1 
+            pos_hint: {"center_x": 0.5, "top": 1.5}
+
+        TextInput:
+            id: text_query
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "Example: any subject"
+            foreground_color: 0.49, 0.008, 0.008
+            pos_hint: {"center_x": 0.5, "top": 0.8}            
+            size_hint:4,0.3
+        Label:
+            text: 'Near'
+            font_size: 20
+            color: 0.408, 0.741,1 
+            pos_hint: {"center_x": 0.5, "top": 0.85}
+        TextInput:
+            id: near
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "Example: any location"
+            foreground_color: 0.49, 0.008, 0.008
+            pos_hint: {"center_x": 0.5, "top": 0.18}            
+            size_hint:4,0.3
+
+        Label:
+            text: 'User'
+            font_size: 20
+            color: 0.408, 0.741,1 
+            pos_hint: {"center_x": 0.5, "top": 0.2}
+
+        TextInput:
+            id: fromuser
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "Example: any nickname"
+            foreground_color: 0.49, 0.008, 0.008
+            pos_hint: {"center_x": 0.5, "top": -0.45}            
+            size_hint:4,0.3
+        Label:
+            text: 'File Name'
+            font_size: 20
+            color: 0.408, 0.741,1 
+            pos_hint: {"center_x": 0.5, "top": -0.47}
+
+        TextInput:
+            id: filname
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "FileName"
+            foreground_color: 0.49, 0.008, 0.008
+            pos_hint: {"center_x": 0.5, "top": -1.15}            
+            size_hint:4,0.3
+        
+        Button:
+            text: ""
+            background_normal:"image/search2.png"
+            pos_hint: {"center_x": 0.5, "top": -1.5}
+            size_hint:(1,1.2)
+            on_press: root.snstw(tweet_count.text, lang.text, since_date.text, until_date.text, text_query.text, near.text, fromuser.text,filname.text)
+        
+        Button: 
+            text:""
+            background_normal:"image/question2.png"
+            pos_hint: {"center_x": 3.5, "top": 3.8}
+            size_hint:(0.32,0.32)
+            on_press:root.open()
+
+<P>:
+    Label:
+        text:"Fill only one of Near or User!"
+        size_hint:0.8,0.8
+        font_size: 25
+        color: 0.408, 0.741, 1
+        pos_hint:{"center_x":0.5,"top":1.2}
+    
+    Label:
+        text:"Press anywhere on the screen to turn it off"
+        size_hint:0.4,0.1
+        pos_hint:{"center_x":0.5,"top":0.5}
+        

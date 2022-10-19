@@ -1,0 +1,53 @@
+sözcü kategorilere ayrılmış olup tarih formatında değildir.
+haberler linkler ok ama creator kod hata veriyor  *****çözüldü.
+hurriyet selenium.kora dan dolayı sorun yaratıyor --------çöz
+evrensel bi çeşit bulut koruma yapıyor -----------çöz
+
+
+dailysabah tarih yok arşiv 50 şer sayfa toplam 4093 adet sayfa 2015 ten başlıyor:(tüm kategorileri kapsıyor) o yüzden ilk 10 tane al
+dailyhurriyet arşivi kapattığından ulaşmak mümkün değil sadece arama yapılabiliniyor
+
+
+gerekli kontrol linkleri
+https://www.milligazete.com.tr/arsiv/2019-10-10/
+https://www.haberler.com/arsiv/02-01-2017/haberler/s1/
+https://www.sabah.com.tr/timeline/2020/10/10?c=yasam
+https://www.hurriyet.com.tr/arama/#/?page=1&where=hurriyet&how=Article,Column,NewsPhotoGallery,NewsVideo,Recipe&startDate=01/01/2017&finishDate=02/01/2017&platform=hurriyet&mainCategory=/ekonomi/&isDetail=true
+https://www.hurriyet.com.tr/arama/#/?page=1&where=hurriyet&how=Article,Column,NewsPhotoGallery,NewsVideo,Recipe&startDate=01/01/2017&finishDate=02/01/2017&platform=hurriyet&isDetail=true
+
+https://www.gazeteduvar.com.tr/arsiv?&tarih_baslangic=22.07.2015&tarih_bitis=22.07.2021&siralama=0&sayfa=1
+
+
+#https://www.dailysabah.com/search?qlimit=by_fifty&pgno=4903&qsort=oldest
+
+
+tarih olanlar
+banker
+dailymail
+dnevnik
+duvar
+dwnews
+ensonhaber
+evrensel
+guardian
+haberler
+hurriyet
+independent
+memurlar
+milli
+odatv4
+sabah
+trud
+turkiye tarihi yaklaşık değerlere göre haber getirtiyor
+
+
+
+
+
+
+kategori
+bgnes
+cumhuriyet
+dailysabah
+sega
+sozcu

@@ -1,0 +1,97 @@
+<Connected>:
+    FloatLayout:
+        orientation: 'vertical'
+        padding: [10,50,10,50]
+        size_hint: None, None
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        spacing: 15
+        orientation: 'vertical'
+
+        Label:
+            text: 'SOCIAL MEDIA COLLECTOR'
+            color: 0.408, 0.741, 1 # <-----------
+            font_size: 50
+            size_hint:(1, .03)
+            pos_hint:{"center_x": 0.5, "top": 3}
+
+        # Button:
+        #     text: "Collect tweets"
+        #     font_size: 20
+        #     background_color:0.208, 1, 0.973
+        #     pos_hint:{"center_x": 0.5, "top": 2}
+        #     size_hint:(3, .8)
+        #     on_press: root.page_one()
+
+        # Button:
+        #     text: "Query Search on Twitter"
+        #     font_size: 20
+        #     background_color:0.208, 1, 0.973
+        #     pos_hint:{"center_x": 0.5, "top": 0.8}
+        #     size_hint:(3, .8)
+        #     on_press: root.page_two()
+
+        Button:
+            text: "Search Tweets with Tweepy"
+            font_size: 20
+            background_color:0.208, 1, 0.973
+            pos_hint:{"center_x": 0.5, "top": 2}
+            size_hint:(3, .8)
+            on_press: root.page_three()
+
+        Button:
+            text: "Scrape Tweets with Snscrape"
+            font_size: 20
+            background_color:0.208, 1, 0.973
+            pos_hint:{"center_x": 0.5, "top": 1}
+            size_hint:(3, .8)
+            on_press: root.page_four()
+
+
+        Button:
+            text: ""
+            background_normal:'image/geri3.png'
+            font_size: 18
+            pos_hint:{"center_x": -2.4, "top": -1.6}
+            size_hint:(0.6,0.6)
+            on_press: root.disconnect()
+
+        Button:
+            text:'Facebook Scraper'
+            font_size: 20
+            background_color:0.208, 1, 0.973
+            pos_hint:{"center_x": 0.5, "top": 0}
+            size_hint:(3, .8)
+            on_press: root.page_five()
+
+
+        Button:
+            text:'Ekşi Sözlük Scraper'
+            font_size: 20
+            background_color:0.208, 1, 0.973
+            pos_hint:{"center_x": 0.5, "top": -1}
+            size_hint:(3, .8)
+            on_press: root.page_six()
+
+
+
+
+
+
+        Button:
+            text: "Google Search"
+            font_size: 24
+            on_press: root.page_seven()
+            pos_hint:{"center_x": 0.5, "top": -2}
+            size_hint:(3, .8)
+
+        Button:
+            text: "Google Topik"
+            font_size: 24
+            on_press: root.page_eight()
+
+        Button:
+            text: "Bing"
+            font_size: 24
+            on_press: root.page_nine()
+

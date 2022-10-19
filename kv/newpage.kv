@@ -1,0 +1,461 @@
+#:import Factory kivy.factory.Factory
+<NewPage>:
+#---------CheckBox Ekleme--------------------
+    search_for_tooltip:search_for_tooltip
+    language_tooltip:language_tooltip
+    filename_tooltip:filename_tooltip
+    maxresult_tooltip:maxresult_tooltip
+    geo_code_tooltip:geo_code_tooltip
+
+    search_for_label:search_for_label
+    search_for_textinput: search_for_textinput
+
+    language_label:language_label
+    spinner:spinner
+
+    filename_label:filename_label
+    filname_text_input:filname_text_input
+
+    max_result_label:max_result_label
+    max_result_text_input:max_result_text_input
+
+    geo_code_label:geo_code_label
+    geo_code_text_input:geo_code_text_input
+
+    fuct_one_button: fuct_one_button
+    fuct_two_button: fuct_two_button
+    fuct_three_button: fuct_three_button
+#-------------------tooltip button --------------------------
+    FloatLayout:
+        TooltipMDIconButton:
+            icon:"help-circle"
+            tooltip_text: "Consumer Key"                    # Consumer Tooltip Button
+            font_size: 20
+            pos_hint:{"center_x":0.47,"top":0.825}
+
+    FloatLayout:
+        TooltipMDIconButton:
+            icon:"help-circle"
+            tooltip_text: "Acces Token"
+            font_size: 20
+            pos_hint:{"center_x":0.47, "center_y": 0.720}           # Acces Token
+
+    FloatLayout:
+        TooltipMDIconButton:
+            icon:"help-circle"
+            tooltip_text: "Consumer Secret"
+            font_size: 20
+            pos_hint:{"center_x":0.97,"top":0.825}
+    FloatLayout:
+        TooltipMDIconButton:
+            icon:"help-circle"
+            tooltip_text: "Acces Secret"
+            font_size: 20
+            pos_hint:{"center_x":0.97,"center_y": 0.720}
+
+
+    FloatLayout:
+        TooltipMDIconButton:
+            id:search_for_tooltip
+            icon:"help-circle"
+            tooltip_text: "Search for keywords or hashtags. It is possible to use boolean operators: https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query"
+            font_size: 20
+            pos_hint:{"center_x":0.230, "top":0.475}
+            on_press:root.search_for_web()
+    FloatLayout:
+        TooltipMDIconButton:
+            id:maxresult_tooltip
+            icon:"help-circle"
+            tooltip_text: "Maximum number of tweets you want to collect"
+            font_size: 20
+            pos_hint:{"center_x":0.465, "top":0.475}
+    FloatLayout:
+        TooltipMDIconButton:
+            id:geo_code_tooltip
+            icon:"help-circle"
+            tooltip_text: ""
+            opacity:0
+            font_size: 20
+            pos_hint:{"center_x":0.465, "top":0.475}
+    FloatLayout:
+        TooltipMDIconButton:
+            id:filename_tooltip
+            icon:"help-circle"
+            tooltip_text: "File will be saved to desktop"
+            font_size: 20
+            pos_hint:{"center_x":0.710, "top":0.475}
+    FloatLayout:
+        TooltipMDIconButton:
+            id:language_tooltip
+            icon:"help-circle"
+            tooltip_text: "Check: https://developer.twitter.com/en/docs/twitter-for-websites/supported-languages"
+            font_size: 20
+            pos_hint:{"center_x":0.960, "top":0.475}
+            on_press:root.language_web()
+
+    FloatLayout:
+        TooltipMDIconButton:
+            icon:"help-circle"
+            tooltip_text: "HTML"
+            font_size: 20
+            pos_hint:{"center_x":0.9,"top":0.940}
+            on_press:root.open_page()
+
+#----------------------SAYFA DÜZENİ--------------------------
+    FloatLayout:
+        orientation: 'vertical'
+        padding: [10,50,10,50]
+        size_hint: None, None
+        pos_hint: {"center_x": 0.25, "center_y": 0.5} #3-17 div mantığı
+        elevation: 10
+        spacing: 15
+
+
+        Label:
+            color: 0.408, 0.741, 1
+            id: deneme
+            text:""
+            pos_hint: {"center_x": 3, "top": -2.3}
+        #--------Başlık---------
+        Label:
+            text: '  Search Tweets with Tweepy  '
+            color: 0.408, 0.741, 1 # <-----------
+            font_size: 25
+            size_hint:(1, .03)
+            pos_hint:{"center_x": 2.9, "top": 3.8}
+
+    #----------------FUNCTİON LABELLAR------------------
+        Label:
+            text:"Search by Query"
+            pos_hint:{"center_x":0,"top":2}
+            font_size:20
+            color: 0.408, 0.741, 1
+        Label:
+            text:'Timeline Search'
+            pos_hint:{"center_x":3,"top":2}
+            font_size:20
+            color: 0.408, 0.741, 1
+        Label:
+            text:'Top tweets by Geo'
+            pos_hint:{"center_x":6,"top":2}
+            font_size:20
+            color: 0.408, 0.741, 1
+
+
+#-------------Fuction One Checkbox-------------
+        CheckBox:
+            id:chk_fuct
+            group: 'check1'
+            pos_hint:{"center_x":1,"top":2}
+            on_active:
+                root.search_for_tooltip.opacity=1  # Visible
+                root.language_tooltip.opacity=1
+                root.maxresult_tooltip.opacity=1
+                root.filename_tooltip.opacity=1
+                root.geo_code_tooltip.opacity=0
+
+                root.geo_code_label.opacity=0
+                root.geo_code_text_input.opacity=0
+                root.geo_code_text_input.disabled=True
+
+                root.search_for_label.opacity=1
+                root.search_for_textinput.opacity=1
+                root.language_label.opacity=1
+                root.spinner.opacity=1
+                root.filename_label.opacity=1
+                root.filname_text_input.opacity=1
+                root.max_result_label.opacity=1
+                root.max_result_text_input.opacity=1
+
+                root.fuct_one_button.opacity=1
+                root.fuct_two_button.opacity=0
+                root.fuct_three_button.opacity=0
+
+                root.fuct_two_button.disabled=True
+                root.fuct_three_button.disabled=True
+                root.fuct_one_button.enabled=True
+                root.fuct_one_button.disabled=False
+
+
+#------------------Fuction Two Checkbox-------------
+        CheckBox:
+            id:chk_fuctt
+            group: 'check1'
+            pos_hint:{"center_x":4,"top":2}
+            on_active:
+                root.search_for_tooltip.opacity=0
+                root.language_tooltip.opacity=0
+                root.maxresult_tooltip.opacity=1
+                root.filename_tooltip.opacity=1
+                root.geo_code_tooltip.opacity=0
+
+                root.geo_code_label.opacity=0
+                root.geo_code_text_input.opacity=0
+                root.geo_code_text_input.disabled=True
+
+                root.search_for_label.opacity=0
+                root.search_for_textinput.opacity=0
+                root.language_label.opacity=0
+                root.spinner.opacity=0
+                root.filename_label.opacity=1
+                root.filname_text_input.opacity=1
+                root.max_result_label.opacity=1
+                root.max_result_text_input.opacity=1
+                root.max_result_text_input.disabled=False
+
+                root.fuct_one_button.opacity=0
+                root.fuct_two_button.opacity=1
+                root.fuct_three_button.opacity=0
+                root.fuct_one_button.disabled=True
+                root.fuct_three_button.disabled=True
+                root.fuct_two_button.disabled=False
+
+
+#----------------Fuction Three Checkbox-------------------------
+        CheckBox:
+            id:chk_fuctt
+            group: 'check1'
+            pos_hint:{"center_x":7,"top":2}
+            on_active:
+                root.search_for_tooltip.opacity=0
+                root.language_tooltip.opacity=0
+                root.maxresult_tooltip.opacity=0
+                root.filename_tooltip.opacity=1
+                root.geo_code_tooltip.opacity=1
+
+                root.geo_code_label.opacity=1
+                root.geo_code_text_input.opacity=1
+                root.geo_code_text_input.disabled=False
+
+                root.search_for_label.opacity=0
+                root.search_for_textinput.opacity=0
+
+                root.language_label.opacity=0
+                root.spinner.opacity=0
+
+                root.filename_label.opacity=1
+                root.filname_text_input.opacity=1
+
+                root.max_result_label.opacity=0
+                root.max_result_text_input.opacity=0
+
+                root.fuct_one_button.opacity=0
+                root.fuct_two_button.opacity=0
+                root.fuct_three_button.opacity=1
+
+                root.fuct_one_button.disabled=True
+                root.fuct_two_button.disabled=True
+                root.fuct_three_button.disabled=False
+
+#------------- go to previous page------------------------------------------------
+        Button:
+            text: ""
+            background_normal:'image/gericollect.png'
+            font_size: 15
+            pos_hint:{"center_x": -1, "top": 4}
+            size_hint:(0.5,0.5)
+            on_press: root.disconnect()
+#------------------------Sayfanın Kalıcı Elemanları---------------------------------
+        Label:
+            id:consumer_key
+            text: 'Consumer Key'
+            color: 0.408, 0.741, 1 # <-----------
+            font_size: 20
+            size_hint:(0.9,0.001)
+            pos_hint:{"center_x": 0.5, "top": 3.2}
+
+        TextInput:
+            id: key
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "consumer_key"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:4,0.3
+            pos_hint: {"center_x": 0.5, "top": 3}
+        Label:
+            id:acces_token_label
+            text: 'Access Token'
+            font_size: 20
+            color: 0.408, 0.741, 1
+            pos_hint: {"center_x": 0.5, "top": 3.05}
+
+        TextInput:
+            id: acces_token
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "access_token"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:4,0.3
+            pos_hint: {"center_x": 0.5, "top": 2.4}
+
+        Label:
+            text: 'Consumer Secret'
+            color: 0.408, 0.741, 1 # <-----------
+            font_size: 20
+            size_hint:(0.9,0.001)
+            pos_hint:{"center_x": 5.5, "top": 3.2}
+
+        TextInput:
+            id: secret
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "consumer_secret"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:4,0.3
+            pos_hint: {"center_x": 5.5, "top": 3}
+
+        Label:
+            text: 'Access Secret'
+            font_size: 20
+            color: 0.408, 0.741, 1
+            pos_hint: {"center_x": 5.5,"top": 3.05}
+
+        TextInput:
+            id: acces_secret
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "access_token_secret"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:4,0.3
+            pos_hint: {"center_x": 5.5, "top": 2.4}
+
+
+            #---------Fuction Seçimine Göre Gelecek Elemanlar------
+        Label:
+            id:search_for_label
+            text:"Search For"
+            color: 0.408, 0.741, 1
+            font_size:15
+            pos_hint:{"center_x":-0.8,"top":1}
+            foreground_color: 0.49, 0.008, 0.008
+
+        TextInput:
+            id: search_for_textinput
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "example: covid or #COVID19"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:1.9,0.3
+            pos_hint: {"center_x": -0.8, "top": 0.2}
+
+        Label:
+            id:max_result_label
+            text: 'Max Result'
+            font_size: 15
+            color: 0.408, 0.741, 1
+            pos_hint: {"center_x":1.5,"top":1}
+        TextInput:
+            id: max_result_text_input
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "Max result value"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:2,0.3
+            pos_hint: {"center_x": 1.5, "top": 0.2}
+
+        Label:
+            id:geo_code_label
+            text: 'Geo Code'
+            font_size: 15
+            opacity:0
+            color: 0.408, 0.741, 1
+            pos_hint: {"center_x":1.5,"top":1}
+        TextInput:
+            id: geo_code_text_input
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "example:23424848"
+            opacity:0
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:2,0.3
+            pos_hint: {"center_x": 1.5, "top": 0.2}
+
+
+        Label:
+            id:filename_label
+            text: 'File Name'
+            font_size: 15
+            color: 0.408, 0.741, 1
+            pos_hint: {"center_x":3.9,"top":1}
+
+        TextInput:
+            id: filname_text_input
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "FileName"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:2,0.3
+            pos_hint: {"center_x": 3.9, "top": 0.2}
+
+        Label:
+            id:language_label
+            text: 'Language'
+            font_size: 15
+            color: 0.408, 0.741, 1
+            pos_hint: {"center_x": 6.4, "top":1}
+
+        Spinner:
+            id:spinner
+            size_hint:2,0.3
+            #sync_height:True
+            pos_hint: {"center_x": 6.4, "top": 0.2}
+            text: 'Select Language'
+            values: 'tr', 'en','de', 'fr','es','nl','ru','ua','ae','dk','ca','eg','cz','ar','hu','jp','py'
+            option_cls: Factory.get("MySpinnerOption")
+            background_color:(0.204, 0.812, 0.922)
+            color:1,1,1
+
+        #----------Buttons-------
+        #fuct 1 de çalışacak
+        Button:
+
+            id:fuct_one_button
+            text: "Search 1"
+            opacity:0
+            disabled:True
+            background_normal:"image/search2.png"
+            pos_hint: {"center_x": 2, "top": -1}
+            size_hint:(1,1.2)
+            on_press:root.fuction_one_button_work(key.text,secret.text,acces_token.text,acces_secret.text,search_for_textinput.text,spinner.text,max_result_text_input.text,filname_text_input.text)
+
+        #fuct 2 de çalışacak
+        Button:
+            id:fuct_two_button
+            text: "Search 2"
+            opacity:0
+            disabled:True
+            background_normal:"image/search2.png"
+            pos_hint: {"center_x": 3, "top": -1}
+            size_hint:(1,1.2)
+            on_press:root.fuction_two_button_work(key.text,secret.text,acces_token.text,acces_secret.text,max_result_text_input.text,filname_text_input.text)
+        #fuct3 de çalışacak
+        Button:
+            id:fuct_three_button
+            text: "Search 3"
+            opacity:0
+            disabled:True
+            background_normal:"image/search2.png"
+            pos_hint: {"center_x": 4, "top": -1}
+            size_hint:(1,1.2)
+            on_press:root.fuction_three_button_work(key.text,secret.text,acces_token.text,acces_secret.text,geo_code_text_input.text,filname_text_input.text)
+
+<MySpinnerOption@SpinnerOption>:
+    background_color: [0.204, 0.812, 0.922]    # blue colour
+    background_down: ''
+    #color:(0.204, 0.812, 0.922)
+<P2>:
+    ScrollView:
+        pos_hint:{"center_x" : 0.5 ,"center_y":0.5}
+        Label:
+            id: sortFilesDisplay
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\n" * 20
+            size_hint: None, None     # <<<<<<<<<<
+            size: self.texture_size

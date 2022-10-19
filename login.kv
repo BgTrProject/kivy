@@ -1,0 +1,100 @@
+
+#:include kv/newpage.kv
+#:include kv/newpageTwo.kv
+#:include kv/bing.kv
+#:include kv/googleSearch.kv
+#:include kv/googleTopik.kv
+#:include kv/tweetcollect.kv
+#:include kv/facebook.kv
+#:include kv/eksi.kv
+#:include kv/connected_one.kv
+#:include kv/social_media.kv
+#:include kv/search_engine.kv
+#:include kv/news.kv
+#:include kv/news_search.kv
+#:include kv/news_date_search.kv
+#:include kv/news_on_google.kv
+
+#<TooltipMDIconButton@MDIconButton+MDTooltip>
+<Login>:
+	BoxLayout:
+        id: login_layout
+        padding: [10,50,10,50]
+        spacing: 50
+        size_hint: None, None
+        size: 1000, 800
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 65
+        spacing: 35
+        orientation: 'vertical'
+        BoxLayout:
+            Image:
+                source: "image/twit.png"
+                allow_stretch:True
+                pos_hint:{"center_x":0.5,"top": 1.2 }
+                size_hint:0.8,0.8
+        FloatLayout:
+            Label:
+                text: 'Kullanıcı Adı'
+                font_size: 20  
+                pos_hint:{"center_x":0.275,"top": 1.8}
+            Label:
+                text: 'Şifre'
+                font_size: 20
+                pos_hint:{"center_x":0.275,"top": 1.5}    
+            TextInput:
+                id: login
+                multiline:False
+                icon_left: "account-check"
+                hint_text: "Username"
+                foreground_color: 1, 0, 0
+                size_hint:0.25,0.13
+                font_size: 20
+                pos_hint: {"center_x": 0.5,"top":1.35}
+            TextInput:
+                id: password
+                multiline:False
+                password:True
+                icon_left: "account-check"
+                hint_text: "Password"
+                foreground_color: 1, 0, 0
+                size_hint_x: None
+                size_hint:0.25,0.13
+                font_size: 20
+                pos_hint: {"center_x": 0.5,"top":1.05}
+    FloatLayout:
+        Button:
+            text: ''
+            font_size: 20
+            size_hint:0.15,0.15
+            pos_hint:{"center_x":0.5,"top":0.4}
+            background_normal:"image/yeni2.png"
+            on_press: root.do_login(login.text, password.text)
+            #background_color: rgba("#011A1C")
+    
+     
+    FloatLayout:
+        Button:
+            id: btnExit
+            text: ""
+            size_hint:0.07,0.08
+            pos_hint:{"center_x":0.1,"top":0.15}
+            background_normal:"image/logout.png"
+            on_press: app.stop()
+    
+       
+        Button: 
+            id:github_ı
+            text:""
+            size_hint:0.08,0.1
+            background_normal:"image/github.png"
+            pos_hint:{"center_x":0.9,"top":0.16}
+            on_press: root.git()
+      
+
+
+        
+
+
+    

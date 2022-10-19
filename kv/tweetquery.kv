@@ -1,0 +1,213 @@
+
+<TweetQuery>:
+    FloatLayout:
+        orientation: 'vertical'
+        padding: [10,50,10,50]
+        size_hint: None, None
+        pos_hint: {"center_x": 0.25, "center_y": 0.5} #3-17 div mantığı
+        elevation: 10
+        spacing: 15
+
+        
+        Label:
+            text: '     Collect     '
+            color: 0.408, 0.741, 1 # <----------- 
+            font_size: 25
+            size_hint:(1, .03)
+            pos_hint:{"center_x": 2.9, "top": 3.8}
+ 
+
+        Button:
+            text: ""
+            background_normal:'image/gericollect.png'
+            font_size: 15
+            pos_hint:{"center_x": -1, "top": 3.9}
+            size_hint:(0.5,0.5)
+            on_press: root.disconnect()
+
+        
+        Label:
+            text: 'Search Word'
+            color: 0.408, 0.741, 1 # <----------- 
+            font_size: 20
+            size_hint:(0.9,0.001)
+            pos_hint:{"center_x": 0.5, "top": 2.6}#beyaz kutu üstü başlık konum
+            
+        TextInput:
+            id: tweet_count
+            multiline:False
+            write_tab: False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "Example: 100"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:4,0.3
+            pos_hint: {"center_x": 0.5, "top": 2.3} #beyaz kutu konumu
+
+        
+        Label:
+            text: 'Since Date'
+            font_size: 20
+            color: 0.408, 0.741, 1 
+            pos_hint: {"center_x": 0.5, "top": 2.2}
+
+        TextInput:
+            id: start_date
+            multiline:False
+            write_tab: False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "Example: 2015-01-01"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:4,0.3
+            pos_hint: {"center_x": 0.5, "top": 1.4}
+        
+        Label:
+            text: 'Text Query'
+            font_size: 20
+            color: 0.408, 0.741, 1 
+            pos_hint: {"center_x": 0.5, "top": 1.3}
+
+        TextInput:
+            id: until_date
+            multiline:False
+            write_tab: False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "Example: any subject"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:4,0.3
+            pos_hint: {"center_x": 0.5, "top": 0.5}
+
+       
+        Label:
+            text: 'Filename(.csv)'
+            font_size: 20
+            color: 0.408, 0.741, 1 
+            pos_hint: {"center_x": 0.5, "top": 0.4}
+
+        TextInput:
+            id: filname
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "Since"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:4,0.3
+            pos_hint: {"center_x": 0.5, "top": -0.4}
+
+        
+        Button: 
+            text:""
+            background_normal:"image/question2.png"
+            pos_hint: {"center_x": 7, "top": 3.8}
+            size_hint:(0.32,0.32)
+            on_press:root.open()
+
+    #---------------------------------------------------
+        Label:
+            text: 'UserID'
+            color: 0.408, 0.741, 1 # <----------- 
+            font_size: 20
+            size_hint:(0.9,0.001)
+            pos_hint:{"center_x": 5.5, "top": 2.6} #beyaz kutu üstü başlık konum
+            
+        TextInput:
+            id: userID
+            multiline:False
+            write_tab: False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "user nickname"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:4,0.3
+            pos_hint: {"center_x": 5.5, "top": 2.3} #beyaz kutu konumu
+
+        
+        Label:
+            text: 'Consurmer Key'
+            font_size: 20
+            color: 0.408, 0.741, 1 
+            pos_hint: {"center_x": 5.5, "top": 2.2}
+
+        TextInput:
+            id: consumer_key
+            multiline:False
+            write_tab: False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "consumer key"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:4,0.3
+            pos_hint: {"center_x": 5.5, "top": 1.4}
+        
+        Label:
+            text: 'Consumer Secret'
+            font_size: 20
+            color: 0.408, 0.741, 1 
+            pos_hint: {"center_x": 5.5, "top": 1.3}
+
+        TextInput:
+            id: consumer_secret
+            multiline:False
+            write_tab: False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "consumer secret"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:4,0.3
+            pos_hint: {"center_x": 5.5, "top": 0.5}
+
+        Label:
+            text: 'Acces Token'
+            font_size: 20
+            color: 0.408, 0.741, 1 
+            pos_hint: {"center_x": 5.5, "top": 0.4}
+
+        TextInput:
+            id: access_token
+            multiline:False
+            write_tab: False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "acces_token"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:4,0.3
+            pos_hint: {"center_x": 5.5, "top": -0.4}
+
+        Label:
+            text: 'Acces Token Secret'
+            font_size: 20
+            color: 0.408, 0.741, 1 
+            pos_hint: {"center_x": 5.5, "top": -0.5}
+
+        TextInput:
+            id: acces_token_secret
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "acces_token_secret"
+            foreground_color: 0.49, 0.008, 0.008
+            size_hint:4,0.3
+            pos_hint: {"center_x": 5.5, "top": -1.3}
+
+        Button:
+            text: ""
+            background_normal:"image/search2.png"
+            pos_hint: {"center_x": 5.5, "top": -1.5}
+            size_hint:(1,1.2)
+            on_press: root.q_snstw(tweet_count.text,start_date.text, until_date.text,filname.text,userID.text,consumer_key.text,consumer_secret.text,access_token.text,acces_token_secret.text)
+
+
+<P>:
+    Label:
+        text:"Fill only one of Near or User!"
+        size_hint:0.8,0.8
+        font_size: 25
+        color: 0.408, 0.741, 1
+        pos_hint:{"center_x":0.5,"top":1.2}
+    
+    Label:
+        text:"Press anywhere on the screen to turn it off"
+        size_hint:0.4,0.1
+        pos_hint:{"center_x":0.5,"top":0.5}

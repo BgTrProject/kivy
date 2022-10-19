@@ -1,0 +1,124 @@
+<Bing>:
+    FloatLayout:
+        TooltipMDIconButton:
+            icon:"help-circle"
+            tooltip_text: "Search for keywords or hashtags. It is possible to use boolean operators: https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query"
+            font_size: 20
+            pos_hint:{"center_x":0.47, "center_y": 0.590}
+
+    FloatLayout:
+        TooltipMDIconButton:
+            icon:"help-circle"
+            tooltip_text: "File will be saved to desktop"
+            font_size: 20
+            pos_hint:{"center_x":0.97, "center_y": 0.590}
+
+    FloatLayout:
+        TooltipMDIconButton:
+            icon:"help-circle"
+            tooltip_text: "File will be saved to desktop"
+            font_size: 20
+            pos_hint:{"center_x":0.72, "center_y": 0.470}
+
+    FloatLayout:
+        orientation: 'vertical'
+        padding: [10,50,10,50]
+        size_hint: None, None
+        pos_hint: {"center_x": 0.25, "center_y": 0.5} #3-17 div mantığı
+        elevation: 10
+        spacing: 15
+
+        Label:
+            text: '  Bing Search  '
+            color: 0.408, 0.741, 1 # <-----------
+            font_size: 25
+            size_hint:(1, .03)
+            pos_hint:{"center_x": 2.9, "top": 3.6}
+
+
+        Button:
+            text: ""
+            background_normal:'image/gericollect.png'
+            font_size: 15
+            pos_hint:{"center_x": -1, "top": 3.9}
+            size_hint:(0.5,0.5)
+            on_press: root.disconnect()
+
+        Label:
+            text: 'Keyword'
+            font_size: 20
+            color: 0.408, 0.741, 1
+            pos_hint: {"center_x": 0.5, "top": 2.15}
+
+        MDTextField:
+            id: search_word
+            icon_right: "text"
+            icon_right_text: "Github"
+            hint_text: "Example: covid or #COVID19"
+            icon_right_color:  0.408, 0.741, 1
+            hint_text: "Example: covid or #COVID19"
+            mode: "rectangle"
+            multiline:False
+            write_tab: False
+            font_size: 14
+            icon_left: "account-check"
+            pos_hint: {"center_x": 0.5, "top": 1.5}
+            size_hint:3.8,0.418
+        Button:
+            text: ""
+            background_normal:"image/search2.png"
+            pos_hint: {"center_x": 3, "top": -0.6}
+            size_hint:(1,1.3)
+            on_press: root.bing_router(search_word.text,link.text,filname.text)
+
+        Button:
+            text:""
+            background_normal:"image/question2.png"
+            pos_hint: {"center_x": 7, "top": 3.8}
+            size_hint:(0.32,0.32)
+            on_press:root.open()
+
+    #--------------------------------------------------
+        Label:
+            text: 'Link'
+            font_size: 20
+            color: 0.408, 0.741, 1
+            pos_hint: {"center_x": 5.5, "top": 2.15}
+
+        MDTextField:
+            id: link
+            hint_text: "any_file"
+            mode: "rectangle"
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "https://www.nytimes.com"
+            foreground_color: 0.49, 0.008, 0.008
+            pos_hint: {"center_x": 5.5, "top": 1.5}
+            size_hint:3.8,0.418
+  #-------------------------Mid label and button---------------
+        Label:
+            text: 'Save file name'
+            font_size: 20
+            color: 0.408, 0.741, 1
+            pos_hint: {"center_x": 2.9, "top": 1.15}
+
+        MDTextField:
+            id: filname
+            hint_text: "any_file"
+            mode: "rectangle"
+            multiline:False
+            font_size: 14
+            icon_left: "account-check"
+            hint_text: "any_file"
+            foreground_color: 0.49, 0.008, 0.008
+            pos_hint: {"center_x": 3, "top": 0.5}
+            size_hint:3.8,0.418
+<P2>:
+    ScrollView:
+        pos_hint:{"center_x" : 0.5 ,"center_y":0.5}
+        Label:
+            id: sortFilesDisplay
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\n" * 20
+            size_hint: None, None     # <<<<<<<<<<
+            size: self.texture_size
