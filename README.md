@@ -87,3 +87,4 @@ dilde(language) arama yapılacağı seçimi yapılıp, akabinde tarih (date) ve 
 @ işareti ile girilip indirilecek dosyaların hangi isimde kaydedileceği (file name) belirtilip arama
 (search) butonu tıklanır.
 
+KJABFASKJFNASKLFNASFKASLKSFFSA
