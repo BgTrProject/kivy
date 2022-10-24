@@ -33,13 +33,6 @@
         pos_hint: {"center_x": 0.25, "center_y": 0.5} #3-17 div mantığı
         elevation: 10
         spacing: 15
-        
-        
-        Label:
-            color: 0.408, 0.741, 1
-            id: deneme
-            text:""
-            pos_hint: {"center_x": 3, "top": -2.3}
 
         Label:
             text: '  Bing Search  '
@@ -65,18 +58,14 @@
 
         MDTextField:
             id: search_word
-            icon_right: "text"
-            icon_right_text: "Github"
             hint_text: "Example: covid or #COVID19"
             icon_right_color:  0.408, 0.741, 1
-            hint_text: "Example: covid or #COVID19"
             mode: "rectangle"
             multiline:False
             write_tab: False
-            font_size: 14
-            icon_left: "account-check"
+            font_size: 12
             pos_hint: {"center_x": 0.5, "top": 1.5}
-            size_hint:3.8,0.418
+            size_hint:4,0.52
         Button:
             text: ""
             background_normal:"image/search2.png"
@@ -96,12 +85,11 @@
             hint_text: "any_file"
             mode: "rectangle"
             multiline:False
-            font_size: 14
-            icon_left: "account-check"
+            font_size: 12
             hint_text: "https://www.nytimes.com"
             foreground_color: 0.49, 0.008, 0.008
             pos_hint: {"center_x": 5.5, "top": 1.5}
-            size_hint:3.8,0.418
+            size_hint:4,0.52
   #-------------------------Mid label and button---------------
         Label:
             text: 'Save file name'
@@ -114,9 +102,7 @@
             hint_text: "any_file"
             mode: "rectangle"
             multiline:False
-            font_size: 14
-            icon_left: "account-check"
-            hint_text: "any_file"
+            font_size: 12
             foreground_color: 0.49, 0.008, 0.008
             pos_hint: {"center_x": 3, "top": 0.5}
-            size_hint:3.8,0.418
+            size_hint:4,0.52
