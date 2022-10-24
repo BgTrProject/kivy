@@ -1,4 +1,8 @@
 # Social_Media App
+#Download your pc
+
+git clone https://github.com/BgTrProject/kivy.git
+
 #after Download before start please follow these steps
 
 #firstly download chromedriver which is suitible with your google chrome version
@@ -9,12 +13,22 @@
 
 
 # Create virtual env
-python -m venv venv
+conda create --name env
+
+# Activate virtualenvirement
+conda activate env
+
 
 # install modules which is required
-python python/trypackage.py
+
+conda install -c conda-forge tk
+
+conda install -c conda-forge kivy
+
+pip install -r requirements.txt
 
 # Start Project 
+
 python main.py
 
 
