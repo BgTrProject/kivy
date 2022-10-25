@@ -21,19 +21,28 @@ conda activate env
 
 # install modules which is required
 
-conda install -c conda-forge tk
-
-conda install -c conda-forge kivy
-
 pip install -r requirements.txt
 
 # Start Project 
 
 python main.py
 
+( if not worked try these commands )
+
+conda install -c conda-forge tk
+
+conda install -c conda-forge kivy
+
+python main.py
 
 
-Uygulamanın Başlangıç Sayfası:
+# Thank you
+
+
+
+
+
+# Application's Pages Details:
 
 
 
