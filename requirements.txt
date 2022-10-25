@@ -5,7 +5,7 @@ pandas
 dtale
 templates
 kivymd
-selenium
+selenium==4.2.0
 bs4
 requests-html
 dateparser
