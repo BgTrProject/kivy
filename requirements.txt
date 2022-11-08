@@ -17,6 +17,7 @@ tldextract
 Scrapy
 dotmap
 PyMySQL
+psygap2-binary
 psycopg2
 elasticsearch
 hjson
